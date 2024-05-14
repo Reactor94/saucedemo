@@ -9,7 +9,7 @@ Install dependencies:
 
 run `npm install` to install all dependecies
 
-To run the tests, execute the following command: `npm run wdio`.
+To run the tests, execute the following command: `npm run test`.
 
 ## Test Structure
 The tests are structured using the Page Object Model (POM) design pattern. Each page of the Sauce Demo website has its own Page Object, located in the pages directory.
