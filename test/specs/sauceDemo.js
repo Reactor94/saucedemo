@@ -5,6 +5,7 @@ import CheckoutOverviewPage from '../pages/CheckoutOverviewPage.js';
 import LoginPage from '../pages/LoginPage.js';
 import { customer, product, productName } from '../../testData/orderData.js';
 import CheckoutCompletePage from '../pages/CheckoutCompletePage.js';
+import { standartUser } from '../../testData/loginData.js';
 
 describe('Sauce Demo', () => {
 
@@ -13,7 +14,7 @@ describe('Sauce Demo', () => {
     });
 
     it('Ensure checkout process completes after adding product', async () => {
-        await LoginPage.login('standard_user', 'secret_sauce');
+        await LoginPage.login(standartUser.userName, standartUser.password);
 
         await InventoryPage.ensureOnPage();
         await InventoryPage.addToCart(productName);
@@ -33,7 +34,7 @@ describe('Sauce Demo', () => {
     });
 
     it('Ensure user cannot finish checkout proces when customer information is not filled', async () => {
-        await LoginPage.login('standard_user', 'secret_sauce');
+        await LoginPage.login(standartUser.userName, standartUser.password);
 
         await InventoryPage.ensureOnPage();
         await InventoryPage.addToCart(productName);
